@@ -1,0 +1,20 @@
+# Files
+main.cpp
+
+# Types of files
+*.cbp
+*.depend
+*.layout
+
+# Folders
+bin/
+obj/
+
+# Ignore folders except this files
+include/*
+!include/*.h
+!include/*.hpp
+
+src/*
+!src/*.c
+!src/*.cpp
