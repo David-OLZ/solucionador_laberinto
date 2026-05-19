@@ -1,5 +1,6 @@
 #include <iostream>
 #include "TDA_Matriz.h"
+
 using namespace std;
 
 int main()
@@ -36,11 +37,11 @@ int main()
             cout<<"Buscando camino con BFS..."<<endl;
             cout<<"Laberinto: "<<endl;
             laberinto.Print();
+            laberinto.BFS_path(*p);
             break;
         case 3:
             cout<<"Saliendo del programa...."<<endl;
             return 0;
-            break;
         default:
             cout<<"La opción ingresada no es valida, revise la entrada"<<endl;
         }

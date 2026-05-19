@@ -52,4 +52,4 @@ template <class T> void Stack<T>::Empty(){
 template class Stack<int>;
 template class Stack<float>;
 template class Stack<char>;
-template class Stack<Posiciones>;
+template class Stack<posiciones>;

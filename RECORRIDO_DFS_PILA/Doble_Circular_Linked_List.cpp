@@ -135,4 +135,4 @@ template <class T> int Doble_Circular_Linked_List<T>::Size(){
 template class Doble_Circular_Linked_List<int>;
 template class Doble_Circular_Linked_List<char>;
 template class Doble_Circular_Linked_List<float>;
-template class Doble_Circular_Linked_List<Posiciones>;
+template class Doble_Circular_Linked_List<posiciones>;
