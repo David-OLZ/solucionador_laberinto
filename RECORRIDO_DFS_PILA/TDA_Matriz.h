@@ -4,12 +4,12 @@
 
 using namespace std;
 //Creacion de una estructura para hacer push de un "solo" elemento
-struct Posiciones{
+struct posiciones{
     int fila;
     int columna;
 
     // para que printForward pueda imprimir, ya que no sabe como imprimir los pares del struct
-    friend ostream& operator<<(ostream& os, const Posiciones& p);
+    friend ostream& operator<<(ostream& os, const posiciones& p);
 };
 
 template <class T> class TDA_Matriz{
@@ -34,6 +34,7 @@ template <class T> class TDA_Matriz{
        bool movimientoAbajo();
        void ponerMarca(T x);
        void DFS_path(TDA_Matriz& matriz_laberinto);
+       void BFS_path(TDA_Matriz& matriz_laberinto);
 };
 
 #endif // TDA_MATRIZ_H

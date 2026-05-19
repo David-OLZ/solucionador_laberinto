@@ -1,34 +1,35 @@
 #include <iostream>
 #include "tda_cola.h"
+#include "TDA_Matriz.h"
 
 using namespace std;
 
-Cola::Cola() {}
+template <class T> Cola<T>::Cola() {}
 
 // Calcula la posicion del siguiente elemento
-int Cola::siguiente(int r) {
+template <class T> int Cola<T>::siguiente(int r) {
     return (r + 1) % MAXTAMQ;
 }
 
 // Inicializa las variables de la cola
-void Cola::crearCola() {
+template <class T> void Cola<T>::crearCola() {
     frente = 0;
     final = MAXTAMQ - 1; // Correccion aplicada
     num_elementos = 0;
 }
 
 // Verifica si la cola no tiene datos
-bool Cola::estaVacia() {
+template <class T> bool Cola<T>::estaVacia() {
     return frente == siguiente(final);
 }
 
 // Verifica si la cola alcanzo su limite
-bool Cola::estaLlena() {
+template <class T> bool Cola<T>::estaLlena() {
     return frente == siguiente(siguiente(final));
 }
 
 // Agrega un elemento al final de la cola
-bool Cola::insertar(TIPO_DE_DATO x) {
+template <class T> bool Cola<T>::insertar(T x) {
     if (!estaLlena()) {
         final = siguiente(final);
         datos_cola[final] = x;
@@ -39,7 +40,7 @@ bool Cola::insertar(TIPO_DE_DATO x) {
 }
 
 // Quita el elemento del inicio de la cola
-void Cola::remover() {
+template <class T> void Cola<T>::remover() {
     if (!estaVacia()) {
         frente = siguiente(frente);
         num_elementos--;
@@ -47,14 +48,19 @@ void Cola::remover() {
 }
 
 // Muestra el primer elemento de la cola
-TIPO_DE_DATO Cola::frenteCola() {
-    if (!estaVacia()) {
-        return datos_cola[frente];
+template <class T> T Cola<T>::frenteCola() {
+    if (estaVacia()) {
+        throw "La cola esta vacia"; // Lanza error si no hay datos
     }
-    return '\0'; // Retorna nulo si la cola esta vacia
+    return datos_cola[frente];
 }
 
 // Devuelve la cantidad de elementos actuales
-int Cola::totalElementos() {
+template <class T> int Cola<T>::totalElementos() {
     return num_elementos;
 }
+
+template class Cola<int>;
+template class Cola<float>;
+template class Cola<char>;
+template class Cola<posiciones>;

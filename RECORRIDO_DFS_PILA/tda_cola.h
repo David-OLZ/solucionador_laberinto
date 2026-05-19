@@ -9,22 +9,37 @@ using namespace std;
 typedef char TIPO_DE_DATO;
 const int MAXTAMQ = 100;
 
-class Cola {
+template <class T> class Cola {
 private:
     int frente;
     int final;
     int num_elementos;
-    TIPO_DE_DATO datos_cola[MAXTAMQ];
+    T datos_cola[MAXTAMQ];
 
 public:
     Cola();
+    // Calcula la posicion del siguiente elemento
     int siguiente(int r);
+
+    // Inicializa las variables de la cola
     void crearCola();
+
+    // Verifica si la cola no tiene datos
     bool estaVacia();
+
+    // Verifica si la cola alcanzo su limite
     bool estaLlena();
-    bool insertar(TIPO_DE_DATO x);
+
+    // Agrega un elemento al final de la cola
+    bool insertar(T x);
+
+    // Quita el elemento del inicio de la cola
     void remover();
-    TIPO_DE_DATO frenteCola();
+
+    // Muestra el primer elemento de la cola
+    T frenteCola();
+
+    // Devuelve la cantidad de elementos actuales
     int totalElementos();
 };
 

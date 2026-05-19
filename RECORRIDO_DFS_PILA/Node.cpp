@@ -33,4 +33,4 @@ template <class T> void Node<T>::setPrevious(Node* n){
 template class Node<int>;
 template class Node<float>;
 template class Node<char>;
-template class Node<Posiciones>;
+template class Node<posiciones>;
